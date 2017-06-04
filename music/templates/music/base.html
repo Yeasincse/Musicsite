@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Musicsite{% endblock %}</title>
+    <title>{% block title %} Musicsite {% endblock %}</title>
     <!--Loads the static files paths shown -->
 
     {% load staticfiles %}
@@ -47,8 +47,8 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="">
-                    <a href="#">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;All_Album
+                    <a href="{% url 'music:album_add' %}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Add_Album
                     </a>
                 </li>
                 <li class="">

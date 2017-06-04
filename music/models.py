@@ -1,10 +1,14 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 class Album(models.Model):
     arist=models.CharField(max_length=250)
     album_title=models.CharField(max_length=500)
     genere=models.CharField(max_length=100)
     album_logo=models.CharField(max_length=1000)
+
+    def get_absolute(self):
+        return  reverse('music:detail', kwargs={'pk':self.pk})
 
     def __str__(self):
         return self.album_title + '-' + self.arist
